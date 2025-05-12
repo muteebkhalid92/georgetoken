@@ -370,6 +370,7 @@
     <div class="youtube-nav-dots"></div>
 </section>
 
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
 // YouTube Variables
   var tag = document.createElement('script');
@@ -393,6 +394,7 @@
           'playsinline': 1
         },
         events: {
+          'onReady': onPlayerReady, // Listen for the 'onReady' event
           'onStateChange': onPlayerStateChange
         }
       }));
@@ -403,6 +405,11 @@
       sliderContainer.scrollLeft = 0;
       updateYouTubeDots(); // Ensure the first dot is active
     }
+  }
+
+  function onPlayerReady(event) {
+    // API is ready, you can now make player controls here if needed
+    // For example: event.target.playVideo();
   }
 
   function onPlayerStateChange(event) {
@@ -430,7 +437,6 @@
 
   function goToYouTubeSlide(index) {
     youtubeCurrentIndex = index;
-    // Calculate the target scroll position directly based on the index
     sliderContainer.scrollLeft = index * (slides[0]?.offsetWidth + (parseInt(window.getComputedStyle(slides[0]).marginRight) || 20));
     updateYouTubeDots();
   }
@@ -765,7 +771,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NFT Collection</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -1294,42 +1299,9 @@
     }
   </script>
 
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-  let players = [];
-  let carouselElement = document.getElementById('youtube-carousel');
-  let carouselInstance = new bootstrap.Carousel(carouselElement, {
-    interval: false,
-    ride: false,
-    pause: false,
-    wrap: true
-  });
-
-  function onYouTubeIframeAPIReady() {
-    const iframes = document.querySelectorAll('#youtube-carousel iframe');
-    iframes.forEach((iframe, index) => {
-      players[index] = new YT.Player(iframe, {
-        events: {
-          'onStateChange': onPlayerStateChange
-        }
-      });
-    });
-  }
-
-  function onPlayerStateChange(event) {
-    if (!carouselInstance) {
-      carouselInstance = new bootstrap.Carousel(carouselElement);
-    }
-    if (event.data == YT.PlayerState.PLAYING) {
-      carouselInstance.pause();
-    } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
-      carouselInstance.cycle();
-    }
-  }
-</script>
 
 </body>
-<script type="text/javascript"
-  src="asset/chrome-extension_/jccapkebeeiajkkdemacblkjhhhboiek/js/inPageScript.bundle.html"></script>
+<!-- <script type="text/javascript"
+  src="asset/chrome-extension_/jccapkebeeiajkkdemacblkjhhhboiek/js/inPageScript.bundle.html"></script> -->
 
 </html>
