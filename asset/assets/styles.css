@@ -123,6 +123,15 @@ header .btn-contact:hover {
   font-size: 1.3rem;
 }
 
+.headertext h4:last-of-type {
+  margin-bottom: 80px; /* Adds gap between header titles and presale buttons */
+}
+
+/* Increase gap before presale buttons */
+.headertext .d-flex.flex-row.justify-content-center.justify-content-md-start[style*="margin-top: 30px"] {
+  margin-top: 20px !important; /* Increase from 30px to 50px */
+}
+
 .headertext .btn-launch,
 .choose .btn-launch,
 .staking .btn-launch,
@@ -133,6 +142,7 @@ header .btn-contact:hover {
 
 .blurbg {
   background: url('../images/bgblur.html') top left no-repeat;
+  padding-top: 100px; /* Adjust this value based on the header height */
   background-size: cover;
   z-index: 0;
 }

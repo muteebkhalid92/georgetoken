@@ -60,7 +60,7 @@
                     i18n="all.launch">AU</span>DIT</a></li>
               <li class="me-md-2"><a href="#" class="btn btn-launch px-3 py-2" target="_blank"><span
                     i18n="all.launch">SA</span>FU</a></li> -->
-              <!-- <li class="me-md-2 vf"><a href="./LTC2.0_WhitePaper.pdf" class="btn btn-launch px-3 py-2"
+              <!-- <li class="me-md-2"><a href="asset/images/George Token White-paper.pdf" class="btn btn-launch px-3 py-2"
                   style="z-index:999;" target="_blank"><span i18n="all.launch">WHITE PAPER</span></a></li> -->
               <!-- <li class="me-md-2"><a href="#" class="btn btn-launch px-3 py-2" target="_blank"><span
                     i18n="all.launch">Lo</span>ttery</a></li>
@@ -102,25 +102,28 @@
               <h4 class="my-0" i18n="header.title3">Name: George Token</h4>
               <h4 class="my-0" i18n="header.title3">Symbol: George</h4>
               <h4 class="my-0" i18n="header.title3">Total supply: 1,000,000,000</h4>
-              <h4 class="my-0" i18n="header.title3">Address: 0xafA36D3c5fA639A97e804D966BC2d70dBC9e4bB6<br>
-
-                <br><br>
+              <h4 class="my-0" i18n="header.title3">Address: 0xafA36D3c5fA639A97e804D966BC2d70dBC9e4bB6</h4>
 
 
                
                 <!-- <h4 class="my-0" i18n="header.title3">A Decentralized Marketplace for Rewards</h4> -->
             </div>
+
+
             <div class="d-flex flex-row justify-content-center justify-content-md-start">
               <a href="https://pancakeswap.finance"
-                class="btn btn-launch me-2" target="_blank"><span i18n="all.launch">Dex</span></a>
-              <a href="https://ethca/token/0xafA36D3c5fA639A97e804D966BC2d70dBC9e4bB6" class="btn btn-launch"
+                class="btn btn-launch me-3" target="_blank"><span i18n="all.launch">Dex</span></a>
+              <a href="https://ethca/token/0xafA36D3c5fA639A97e804D966BC2d70dBC9e4bB6" class="btn btn-launch me-3"
                 target="_blank" i18n="home.buyBNB">Chart</a>
+              <a href="asset/images/George Token White-paper.pdf" class="btn btn-launch me-3"
+                style="z-index:999;" target="_blank"><span i18n="all.launch">White Paper</span></a>
             </div>
             <div class="d-flex flex-row justify-content-center justify-content-md-start" style="margin-top: 30px;">
-              <a href="George Token Presale\index.html"
-                class="btn btn-launch me-2" target="_blank"><span i18n="all.launch">Buy Presale</span></a>
-              <a href="https://bscscan.com/address/0xafA36D3c5fA639A97e804D966BC2d70dBC9e4bB6" class="btn btn-launch"
-                target="_blank" i18n="home.buyBNB">Block Explorer</a>
+              <a href="George Token Presale/index.html"
+                class="btn btn-launch me-3" target="_blank"><span i18n="all.launch">Presale</span></a>
+              <a href="https://www.pinksale.finance/launchpad/bsc/0xc35b69E05ba1034127cA22A550f53433520ABac3?refId=0xfc3c9cacd7ce128c0da5291ff9545d3499d5e0be" class="btn btn-launch me-3" target="_blank"><span i18n="all.launch">Pinksale</span></a>              
+              <a href="https://bscscan.com/address/0xafA36D3c5fA639A97e804D966BC2d70dBC9e4bB6" class="btn btn-launch me-3"
+                target="_blank" i18n="home.buyBNB">Bscscan</a>
             </div>
             <div style="display: flex;justify-content: space-between;margin-top: 30px;">
               <a href="https://coingecko.com/currencies/george/"><img src="img/gecko.png" alt="" width="70px"></a>
@@ -1320,6 +1323,23 @@
         })
       }
     }
+  </script>
+
+  <script>
+    // Copy button functionality
+    document.getElementById('copyButton').addEventListener('click', function() {
+      const contractAddress = "0xafA36D3c5fA639A97e804D966BC2d70dBC9e4bB6";
+      navigator.clipboard.writeText(contractAddress).then(function() {
+        // Show feedback to user
+        const originalText = document.getElementById('copyButton').innerText;
+        document.getElementById('copyButton').innerText = 'Copied!';
+        setTimeout(function() {
+          document.getElementById('copyButton').innerText = originalText;
+        }, 2000);
+      }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+      });
+    });
   </script>
 
 
