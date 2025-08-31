@@ -105,9 +105,9 @@
               <h4 class="my-0" i18n="header.title3" style="display: flex; align-items: center;">
                 Address: 0xafA36D3c5fA639A97e804D966BC2d70dBC9e4bB6
                 <button id="copyButton" class="copy-btn" aria-label="Copy Address" title="Copy Address" style="background:none; border:none; cursor:pointer; margin-left: 8px; vertical-align: middle; position: relative; padding: 5px; display: inline-flex !important; align-items: center; border: none; border-radius: 4px;">
-                  <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16" style="color: #000; opacity: 1.2; transition: opacity 0.3s ease;">
-                    <path d="M10 1.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1A1.5 1.5 0 0 0 4.5 0h-2A1.5 1.5 0 0 0 1 1.5v13A1.5 1.5 0 0 0 2.5 16h11a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 13.5 0h-2A1.5 1.5 0 0 0 10 1.5zM4.5 1a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v1h-4v-1z"/>
-                  </svg>
+    <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16" style="color: #EFBF04; opacity: 1; transition: opacity 0.3s ease;">
+      <path d="M10 1.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1A1.5 1.5 0 0 0 4.5 0h-2A1.5 1.5 0 0 0 1 1.5v13A1.5 1.5 0 0 0 2.5 16h11a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 13.5 0h-2A1.5 1.5 0 0 0 10 1.5zM4.5 1a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v1h-4v-1z"/>
+    </svg>
                 </button>
               </h4>
 
@@ -561,7 +561,8 @@
                             <li><strong>Staking:</strong> 70% (700,000,000)</li>
                             <li><strong>Private Sale:</strong> 5% (50,000,000)</li>
                             <li><strong>Presale:</strong> 5% (50,000,000)</li>
-                            <li><strong>Liquidity:</strong> 3% (30,000,000)</li>
+                            <li><strong>Pinksale:</strong> 1% (10,000,000)</li>                            
+                            <li><strong>Liquidity:</strong> 2% (20,000,000)</li>
                             <li><strong>Team:</strong> 7% (70,000,000)</li>
                             <li><strong>CEX Listings:</strong> 10% (100,000,000)</li>
                         </ul>
@@ -576,12 +577,13 @@
             new Chart(ctx, {
                 type: 'pie',
                 data: {
-                    labels: ['Staking', 'Private Sale', 'Presale', 'Liquidity', 'Team', 'CEX Listings'],
+                    labels: ['Staking', 'Private Sale', 'Presale', 'Pinksale', 'Liquidity', 'Team', 'CEX Listings'],
                     datasets: [{
-                        data: [70, 10, 10, 3, 7, 10],
+                        data: [70, 5, 5, 1, 2, 7, 10],
                         backgroundColor: [
                             '#EFBF04',
                             '#007bff',
+                            '#dc3545',
                             '#dc3545',
                             '#28a745',
                             '#ffc107',
@@ -1259,6 +1261,9 @@
                   <a href="https://t.me/georgetokenofficial" class="text-decoration-none me-3" target="_blank">
                     <img src="asset/assets/icon/telegram.png" class="social" alt="Telegram">
                   </a>
+                  <a href="https://t.me/georgetoken1000x" class="text-decoration-none me-3" target="_blank">
+                    <img src="asset/assets/icon/telegram.png" class="social" alt="Telegram">
+                  </a>                  
                   <a href="https://x.com/Georgetoken_bsc" class="text-decoration-none me-3" target="_blank">
                     <img src="asset/assets/icon/twitter.png" class="social" alt="Twitter">
                   </a>
@@ -1334,11 +1339,9 @@
 
   <style>
     .copy-btn svg {
-      fill: #000;
-      transition: fill 0.3s ease;
-    }
-    .copy-btn:hover svg {
       fill: #EFBF04;
+      opacity: 1;
+      transition: opacity 0.3s ease;
     }
     .copy-tooltip {
       position: relative;
