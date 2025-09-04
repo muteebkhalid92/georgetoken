@@ -65,6 +65,24 @@ header .btn-contact:hover {
   border-radius: 25px;
 }
 
+.flash-pink {
+  animation: flashPink 1s infinite;
+  color: #000 !important;
+}
+
+.flash-pink::before {
+  background: linear-gradient(45deg, #FF69B4, #FF69B4) !important;
+}
+
+@keyframes flashPink {
+  0%, 100% {
+    background: #EFBF04;
+  }
+  50% {
+    background: #FF69B4;
+  }
+}
+
 .btn-launch::before {
   content: "";
   position: absolute;
