@@ -63,29 +63,6 @@ header .btn-contact:hover {
   color: #000;
   background: #EFBF04;
   border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
-  padding: .8rem 1.4rem .8rem 1.4rem;
-}
-
-.flash-pink {
-  animation: flashPink 1s infinite;
-  color: #000 !important;
-}
-
-.flash-pink::before {
-  background: linear-gradient(45deg, #FF69B4, #FF69B4) !important;
-}
-
-@keyframes flashPink {
-  0%, 100% {
-    background: #EFBF04;
-  }
-  50% {
-    background: #FF69B4;
-  }
 }
 
 .btn-launch::before {
@@ -146,18 +123,16 @@ header .btn-contact:hover {
   font-size: 1.3rem;
 }
 
-.headertext h4:last-of-type {
-  margin-bottom: 80px; /* Adds gap between header titles and presale buttons */
-}
-
-/* Increase gap before presale buttons */
-.headertext .d-flex.flex-row.justify-content-center.justify-content-md-start[style*="margin-top: 30px"] {
-  margin-top: 20px !important; /* Increase from 30px to 50px */
+.headertext .btn-launch,
+.choose .btn-launch,
+.staking .btn-launch,
+.whitepaper .btn-launch {
+  font-size: 1rem;
+  padding: .8rem 1.4rem .8rem 1.4rem;
 }
 
 .blurbg {
   background: url('../images/bgblur.html') top left no-repeat;
-  padding-top: 100px; /* Adjust this value based on the header height */
   background-size: cover;
   z-index: 0;
 }
@@ -265,8 +240,6 @@ header .btn-contact:hover {
 
 .choose .game img {
   width: 600px;
-  border: 3px solid #EFBF04;
-  border-radius: 5px;
 }
 
 .choose .gift {
@@ -277,8 +250,6 @@ header .btn-contact:hover {
 
 .choose .gift img {
   width: 600px;
-  border: 3px solid #EFBF04;
-  border-radius: 5px;
 }
 
 .choose .gift p {
@@ -436,6 +407,58 @@ footer .row {
   margin-bottom: 0; /* Remove any row bottom margin */
 }
 
+@media (max-width: 575.98px) {
+  footer .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  footer .row.align-items-center {
+    justify-content: center !important;
+  }
+  footer .col-10.col-md-5.offset-1.offset-md-0 {
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+footer hr {
+  border-radius: 50rem;
+  height: 3px !important;
+  background: linear-gradient(90deg, #EFBF04 0%, #EFBF04 100%);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+footer h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+footer p {
+  color: #000;
+  font-size: .9rem;
+  font-weight: 400;
+}
+
+footer p a {
+  color: #fff;
+}
+
+footer img.social {
+  width: 30px;
+}
+
+.padding-4 {
+  padding-top: 24px;
+}
+
+.qimg {
+  margin: 100px 0;
+  padding-left: 10%;
+}
+
 @media (max-width: 991.98px) {
   html {
     scroll-padding-top: 180px;
@@ -513,34 +536,166 @@ footer .row {
   }
 }
 
-@media only screen and (max-width: 767px) {
-  /* Fix excessive padding on headertext */
-  .headertext {
-    padding-top: 4rem !important;
+.f-col {
+  color: #EFBF04 !important;
+}
+
+.ping {
+  margin: 62px 0;
+  padding-left: 10%;
+}
+
+.qing {
+  margin: 140px 0;
+  padding-left: 55%;
+}
+
+.oimg {
+  padding-left: 55%;
+}
+
+@media only screen and (max-width:767px) {
+  .ping {
+    margin: 0;
+    padding-left: 0;
   }
 
-  /* Allow button containers to wrap buttons */
-  .headertext .d-flex.flex-row,
-  .headertext .d-flex.flex-row.justify-content-center.justify-content-md-start {
-    flex-wrap: wrap !important;
-    gap: 10px;
+  .qing {
+    margin: 0;
+    padding-left: 0px;
   }
 
-  /* Fix nowrap on tokenomics list items */
-  .tokenomics-list li {
-    white-space: normal !important;
-    word-break: break-word !important;
+  .oimg {
+    padding-left: 0;
   }
+}
 
-  /* Allow address and copy button to wrap */
-  .headertext h4[style*="display: flex"] {
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-  }
+.bg-col {
+  background-color: #EFBF04;
+}
 
-  /* Make buttons take full width on small screens for better tap targets */
-  .headertext .btn-launch {
-    flex: 1 1 100% !important;
-    max-width: 100% !important;
-  }
+.bg-0 {
+  background: #000 !important;
+  border-radius: 35px;
+}
+
+.gallery-container {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    position: relative;
+}
+
+.image-wrapper {
+    display: inline-block;
+    margin-right: 20px;
+    transition: transform 0.5s ease, filter 0.5s ease, border 0.3s ease; /* Added border transition */
+    cursor: pointer;
+    border: 2px solid transparent; /* Initial transparent border */
+}
+
+.image-wrapper img {
+    width: 150px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    filter: grayscale(100%);
+    object-fit: cover;
+    border: 2px solid #EFBF04; /* Gold color border for all images */
+}
+
+.image-wrapper.active img {
+    filter: none; /* Remove grayscale for the active image */
+}
+
+h2 {
+    text-align: center;
+    color: #EFBF04; /* Adjust color as needed */
+    margin-bottom: 20px; /* Adjust spacing below the title */
+    /* Add any other desired styles like font-size, font-weight, etc. */
+}
+
+
+.youtube-section {
+    background-color: transparent; /* Transparent background */
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.youtube-section h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.youtube-slider-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 15px; /* To accommodate potential scrollbar */
+    scroll-behavior: smooth; /* For smooth scrolling */
+}
+
+.youtube-slide {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* The iframe styling is no longer directly applied here */
+
+/* Style for the scrollbar (optional - customize as needed) */
+.youtube-slider-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.youtube-slider-container::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+.youtube-slider-container::-webkit-scrollbar-track {
+    background-color: #333;
+    border-radius: 4px;
+}
+
+/* Dot navigation styles */
+.youtube-nav-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.youtube-nav-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #888;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.youtube-nav-dot.active {
+    background-color: #fff;
+}
+
+.youtube-slider-container {
+    overflow-x: auto; /* Keep this for scrolling functionality */
+    white-space: nowrap;
+    padding-bottom: 15px; /* To accommodate potential scrollbar */
+    scroll-behavior: smooth; /* For smooth scrolling on dot click */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.youtube-slider-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+img {
+}
+
+.position-relative.coin1 .carousel-inner img {
+  border: 3px solid #EFBF04;
+  border-radius: 5px;
+}
+
+.choose .game img {
+  border: 3px solid #EFBF04;
+  border-radius: 5px;
 }
